@@ -6,14 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 @Entity
 public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int reviewId;
 	//changed
-	@ManytoOne
+	@ManyToOne
 	@JoinColumn(name="productId")
 	private Product product;//many to many ?????????
 	private String comments;

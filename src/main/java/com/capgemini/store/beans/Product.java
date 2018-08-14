@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -39,7 +40,7 @@ public class Product {
 	//changed
 	@ManyToMany
 	@JoinColumn(name="merchantId")
-	private List<Merchant> merchant=new ArrayList<Merchant>;
+	private List<Merchant> merchant=new ArrayList<Merchant>();
 	private Date productAddedDate;
 	private String brand;
 	private Date productRemovedDate;
@@ -47,22 +48,29 @@ public class Product {
 	//changed
 	@ManyToMany
 	@JoinColumn(name="orderId")
-	private List<Orders> order=new ArrayList<Orders>;
+	private List<Orders> order=new ArrayList<Orders>();
 	@ManyToOne
 	@JoinColumn(name="inventoryId")
 	private Inventory inventory;
 	
 	
-	public Merchant getMerchant() {
+	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+	public List<Merchant> getMerchant() {
 		return merchant;
 	}
-	public void setMerchant(Merchant merchant) {
+	public void setMerchant(List<Merchant> merchant) {
 		this.merchant = merchant;
 	}
-	public Orders getOrder() {
+	public List<Orders> getOrder() {
 		return order;
 	}
-	public void setOrder(Orders order) {
+	public void setOrder(List<Orders> order) {
 		this.order = order;
 	}
 	public Inventory getInventory() {
