@@ -46,9 +46,9 @@ public class Product {
 	private Date productRemovedDate;
 	
 	//changed
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name="orderId")
-	private List<Orders> order=new ArrayList<Orders>();
+	private Orders order;
 	@ManyToOne
 	@JoinColumn(name="inventoryId")
 	private Inventory inventory;
@@ -67,10 +67,10 @@ public class Product {
 	public void setMerchant(List<Merchant> merchant) {
 		this.merchant = merchant;
 	}
-	public List<Orders> getOrder() {
+	public Orders getOrder() {
 		return order;
 	}
-	public void setOrder(List<Orders> order) {
+	public void setOrder(Orders order) {
 		this.order = order;
 	}
 	public Inventory getInventory() {

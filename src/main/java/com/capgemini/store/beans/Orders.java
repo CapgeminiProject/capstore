@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -18,7 +17,7 @@ public class Orders {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int orderId;
 	// changed
-	@ManyToMany(mappedBy = "order", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
 	private List<Product> products = new ArrayList<Product>();// one to many
 	private int userId;
 	private double totalAmount;
