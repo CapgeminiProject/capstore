@@ -12,7 +12,8 @@ public class Review {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int reviewId;
-	@OneToMany
+	//changed
+	@ManytoOne
 	@JoinColumn(name="productId")
 	private Product product;//many to many ?????????
 	private String comments;
