@@ -14,6 +14,7 @@ import javax.persistence.OneToOne;
 public class Customer {
 @Id
 private String phoneNumber;
+//changed
 @OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
 private List<Address> address=new ArrayList<Address>();;	
 private String email;
