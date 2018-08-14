@@ -14,9 +14,8 @@ import javax.persistence.OneToOne;
 public class Customer {
 @Id
 private String phoneNumber;
-@OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="addressId")
-private Address address;	
+@OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
+private List<Address> address=new ArrayList<Address>();;	
 private String email;
 private String password;
 private String cardNumber;
