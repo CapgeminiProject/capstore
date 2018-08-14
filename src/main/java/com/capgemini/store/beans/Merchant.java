@@ -18,7 +18,7 @@ public class Merchant {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int merchantId;
 	private boolean isThirdPartyMerchant;
-	@OneToMany(mappedBy="merchant",cascade=CascadeType.ALL)
+	@ManyToMany(mappedBy="merchant",cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<Product>();
 	private Date addMerchantDate;
 	/*@ManyToOne
