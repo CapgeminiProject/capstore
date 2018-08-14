@@ -10,6 +10,8 @@ public class Address {
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 private int addressId;
+//changed	
+@ManyToOne
 private Customer customer;//one to one
 private String country;
 private String state;
