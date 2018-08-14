@@ -19,7 +19,8 @@ public class Orders {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int orderId;
-	@OneToMany(mappedBy="order",cascade=CascadeType.ALL)
+	//changed
+	@ManyToMany(mappedBy="order",cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<Product>();// one to many
 	private int userId;
 	private double totalAmount;
