@@ -36,15 +36,18 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name="wishlistId")
 	private Wishlist wishlist;
-	@ManyToOne
+	//changed
+	@ManyToMany
 	@JoinColumn(name="merchantId")
-	private Merchant merchant;
+	private List<Merchant> merchant=new ArrayList<Merchant>;
 	private Date productAddedDate;
 	private String brand;
 	private Date productRemovedDate;
-	@ManyToOne
+	
+	//changed
+	@ManyToMany
 	@JoinColumn(name="orderId")
-	private Orders order;
+	private List<Orders> order=new ArrayList<Orders>;
 	@ManyToOne
 	@JoinColumn(name="inventoryId")
 	private Inventory inventory;
