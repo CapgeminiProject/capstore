@@ -12,6 +12,7 @@ public class Address {
 private int addressId;
 //changed	
 @ManyToOne
+@JoinColumn(name="customerId")
 private Customer customer;//one to one
 private String country;
 private String state;
